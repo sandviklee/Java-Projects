@@ -1,0 +1,78 @@
+@startuml
+class Car [[java:stuff.fasit.Car]] {
+	-int seats
+	+Car(String sign, int seats)
+	+String toString()
+	+void removePassenger(Person person)
+	+Collection<Person> getPassengers()
+	+String getSign()
+	+boolean isFull()
+	+{static}void main(String[] args)
+	+Person findPerson(String name)
+	~void addPassenger(Person person)
+	~void setDriver(Person driver)
+	+int getTotalAge()
+}
+class Plate [[java:uke5.car_forelesning.Plate]] {
+}
+Car --> "1" Plate : plate
+class Person [[java:uke9.personcomparing.Person]] {
+}
+Car --> "1" Person : driver
+class Person [[java:uke9.personcomparing.Person]] {
+}
+Car --> "*" Person : passengers
+class CarApp [[java:stuff.fasit.CarApp]] {
+	+void start(Stage primaryStage)
+	+{static}void main(String[] args)
+}
+class Application [[java:com.sun.glass.ui.Application]] {
+}
+Application <|-- CarApp
+class Plate [[java:stuff.fasit.Plate]] {
+	~String sign
+	+String getSign()
+	+{static}boolean checkSign(String sign)
+	+Plate(String sign)
+	+String toString()
+	+{static}void main(String[] args)
+}
+class CarController [[java:stuff.fasit.CarController]] {
+	~TextField carPlate
+	~TextField carSeats
+	~TextField driverName
+	~TextField driverAge
+	~TextField passengerName
+	~TextField passengerAge
+	~TextField removePassenger
+	~Label carInfo
+	~Label ageInfo
+	~Button setDriver
+	~Button addPassenger
+	~Button setCar
+	~Button removePassengerButton
+	~void handleSetCar()
+	-Car getCar(String plate)
+	~void handleRemovePassenger()
+	~void handleSetDriver()
+	-void toggleDisableAddPassenger()
+	~void handleAddPassenger()
+}
+class Car [[java:uke5.car_forelesning.Car]] {
+}
+CarController --> "1" Car : car
+class Car [[java:uke5.car_forelesning.Car]] {
+}
+CarController --> "*" Car : cars
+class Person [[java:stuff.fasit.Person]] {
+	~String name
+	~int age
+	+String getName()
+	+int getAge()
+	+Person(String name)
+	+Person()
+	+Person(String name, int age)
+	+String toString()
+	+{static}void main(String[] args)
+}
+@enduml
