@@ -1,0 +1,53 @@
+@startuml
+class Emne [[java:uke6.universitet.Emne]] {
+	~String kode
+}
+class Person [[java:uke5.fasit.Person]] {
+}
+Emne --> "*" Person : forelesere
+class Person [[java:uke5.fasit.Person]] {
+}
+Emne --> "*" Person : studenter
+class Studieprogram [[java:uke6.universitet.Studieprogram]] {
+}
+Emne --> "*" Studieprogram : iStudieprogram
+class Institutt [[java:uke6.universitet.Institutt]] {
+}
+Emne --> "1" Institutt : ansvarlig
+class Studieprogram [[java:uke6.universitet.Studieprogram]] {
+	~String kode
+}
+class Emne [[java:uke6.universitet.Emne]] {
+}
+Studieprogram --> "*" Emne : emner
+class Fakultet [[java:uke6.universitet.Fakultet]] {
+}
+Studieprogram --> "1" Fakultet : fakultet
+class Fakultet [[java:uke6.universitet.Fakultet]] {
+	~String kode
+}
+class Studieprogram [[java:uke6.universitet.Studieprogram]] {
+}
+Fakultet --> "*" Studieprogram : eierStudieProgram
+class Institutt [[java:uke6.universitet.Institutt]] {
+}
+Fakultet --> "*" Institutt : eierInstitutt
+class Person [[java:uke6.universitet.Person]] {
+	~String navn
+}
+class Emne [[java:uke6.universitet.Emne]] {
+}
+Person --> "*" Emne : foreleser
+class Emne [[java:uke6.universitet.Emne]] {
+}
+Person --> "*" Emne : studerer
+class Institutt [[java:uke6.universitet.Institutt]] {
+	~String kode
+}
+class Emne [[java:uke6.universitet.Emne]] {
+}
+Institutt --> "*" Emne : emner
+class Fakultet [[java:uke6.universitet.Fakultet]] {
+}
+Institutt --> "1" Fakultet : fakultet
+@enduml

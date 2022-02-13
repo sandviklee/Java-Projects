@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="todolist.fxui.TodoController">
+    <fx:define>
+        <String fx:id="sampleTodoListResource" fx:value="sample-todolist.todo"/>
+    </fx:define>
+    <Text fx:id="todoListNameView" text="&lt;the todo list name&gt;"/>
+    <ListView fx:id="todoListEntriesView"/>
+    <HBox>
+        <TextField fx:id="todoEntryTextField" onTextChange="#handleTodoEntryTextFieldChange" onAction="#handleTodoEntryButtonAction"/>
+        <Button fx:id="todoEntryButton" onAction="#handleTodoEntryButtonAction"/>
+    </HBox>
+    <Pane prefHeight="10" />
+    <Text text="Save/Load" style="-fx-font-size: 20;" />
+    <HBox>
+    	<Text text="File location:" />
+    	<TextField fx:id="fileLocationNameField"/>
+    	<Button onAction="#handleBrowseButtonAction" text="Browse.." />
+    </HBox>
+    <HBox>
+    	<Button onAction="#handleLoadButtonAction" text="Load" />
+    	<Button onAction="#handleSaveButtonAction" text="Save" />
+    </HBox>
+    <Pane prefHeight="10" />
+    <HBox>
+    	<Button onAction="#handleSettingsAction" text="Settings..." />
+    </HBox>
+    <Pane prefHeight="10" />
+    <Text fx:id="statusText" text="OK"/>
+</VBox>

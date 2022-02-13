@@ -1,0 +1,10 @@
+Del1) 
+
+Det som skjer er at canDrink metoden blir false, grunnet at det er bare 5 (enhet?) mye kaffe igjen i koppen, og du prøver å drikke 40 (enhet). 
+Da grunnet at drinkCoffe metoden setter if setning med "og", og derfor siden en blir false, blir hele false, og det blir utløst en IllegalArgumentException. 
+
+
+Del2)
+
+Det som skjer her er at isValidVolume blir false, grunnet at volumet av kaffe som blir tilsatt i koppen er mer en hva man kan putte inn i koppen. Volume er 46,5 (enhet) og capacity er 40 (enhet). 
+Vi henter fillCoffe metoden her, og den blir derfor å utløse en IllegalArgumentException grunnet at isValidVolume blir ikke blir true, grunnet at currentVolume + volume blir det helhetlige volumet. 

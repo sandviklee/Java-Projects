@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="snakebird.GameController">
+   <children>
+      <GridPane prefHeight="400.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="600.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="330.0" vgrow="ALWAYS" />
+          <RowConstraints maxHeight="70.0" minHeight="70.0" prefHeight="70.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Pane fx:id="board" prefHeight="200.0" prefWidth="600.0" GridPane.rowIndex="0">
+            </Pane>
+            <Pane maxHeight="75.0" minHeight="75.0" prefHeight="75.0" prefWidth="600.0" GridPane.rowIndex="1">
+               <children>
+                  <Button layoutX="100.0" layoutY="5.0" mnemonicParsing="false" onMouseClicked="#handleUp" prefWidth="60.0" text="Up" />
+                  <Button layoutX="100.0" layoutY="40.0" mnemonicParsing="false" onMouseClicked="#handleDown" prefWidth="60.0" text="Down" />
+                  <Button layoutX="30.0" layoutY="40.0" mnemonicParsing="false" onMouseClicked="#handleLeft" prefWidth="60.0" text="Left" />
+                  <Button layoutX="170.0" layoutY="40.0" mnemonicParsing="false" onMouseClicked="#handleRight" prefWidth="60.0" text="Right" />
+                  <Button layoutX="507.0" layoutY="5.0" mnemonicParsing="false" onMouseClicked="#handleLoad" text="Load" />
+                  <Button layoutX="507.0" layoutY="40.0" mnemonicParsing="false" onMouseClicked="#handleSave" text="Save" />
+                  <TextField fx:id="filename" layoutX="334.0" layoutY="27.0" prefHeight="27.0" prefWidth="160.0" promptText="save_file" text="save_file" />
+                  <Text layoutX="334.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filename:" />
+                  <Text fill="RED" layoutX="334.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filen finnes ikke" visible="false" fx:id="fileNotFoundMessage"/>
+               </children>
+            </Pane>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

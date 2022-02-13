@@ -6,7 +6,6 @@ import javafx.scene.text.Text;
 
 public class KafeController {
 
-	boolean ikkeNok = true;
 	MiniKafe mk = new MiniKafe();
 	Person p = new Person("Jo");
 	
@@ -14,7 +13,6 @@ public class KafeController {
 
 	@FXML
 	void handleNew() {
-		this.ikkeNok = true;
 		p = new Person("Even");
 		output.setText("Har "+p.getNavn()+" fått nok kaffe: "+p.nokKaffe());
 //		updateOutput();
@@ -24,19 +22,15 @@ public class KafeController {
 		String outputString = "Ferdig? ";
 		if (p.nokKaffe()) {
 			outputString += " Ja!";
-			ikkeNok = false;
 		} else {
-			outputString += " Nei";
-			ikkeNok = true;			
+			outputString += " Nei";			
 		}
 		output.setText(outputString);
 	}
 	
 	@FXML
 	void handleServer() {
-		if (ikkeNok) {
-			p.drikkKaffe();
-			updateOutput();
-		}
+		p.drikkKaffe();
+		updateOutput();
 	}
 }

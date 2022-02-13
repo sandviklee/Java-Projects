@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import javafx.event.EventDispatchChain;
-
 public class SelfServiceCheckout {
 
     public static final List<String> days = Arrays.asList("mon", "tue", "wed", "thu", "fri", "sat", "sun");
@@ -25,16 +23,14 @@ public class SelfServiceCheckout {
         this.shoppingCart = new ArrayList<>();
     }
 
-    public void activateAdminMode() {
+    public void activateAdminMode(String password) {
         if (this.adminMode) {
             throw new IllegalStateException("Du er allerede logget inn som admin!");
         }
-
         if (this.password.equals(password)) {
             this.adminMode = true;
-        }
-        else {
-            throw new IllegalArgumentException("Feil Passord.");
+        } else {
+            throw new IllegalArgumentException("Feil passord!");
         }
     }
 
@@ -46,7 +42,7 @@ public class SelfServiceCheckout {
 
     private void validatePassword(String password) {
         if (!password.matches("^(?=.*[0-9])(?=.*[a-zA-Z]).{6,10}$")) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Invalid Password");
         }
     }
 
@@ -109,10 +105,9 @@ public class SelfServiceCheckout {
 
     public void removeFromCart(int index) {
         if (!this.adminMode) {
-            throw new IllegalStateException("Du kan ikke fjerne varer.");
+            throw new IllegalStateException("Du har ikke lov til å fjerne varer!");
         }
-        else this.shoppingCart.remove(index);
-        
+        this.shoppingCart.remove(index);
     }
 
     public boolean isMember() {
@@ -129,24 +124,7 @@ public class SelfServiceCheckout {
     }
 
     public double getPriceForItem(Item item) {
-        return item.getPrice() - (item.getPrice()*getDiscountForItem(item));
-    }
-
-    public double getMVAForItem(Item item) {
-        double MVA = 1.15;
-        return item.getPrice() - item.getPrice()/(MVA);
-    }
-
-    public double getPriceWithoutMVAForItem(Item item) {
-        return item.getPrice() - this.getMVAForItem(item);
-    }
-
-    public double getTotalMVAForCart() {
-        double MVA = 0;
-        for (Item item : shoppingCart) {
-            MVA += this.getMVAForItem(item);
-        }
-        return MVA;
+        return item.getPrice() - (item.getPrice() * this.getDiscountForItem(item));
     }
 
     public double getTotalPriceForCart() {
@@ -156,7 +134,7 @@ public class SelfServiceCheckout {
         }
         return sum;
     }
-    
+
     @Override
     public String toString() {
         String receipt = """
@@ -166,10 +144,11 @@ public class SelfServiceCheckout {
 
         // TODO: Skriv kode for å printe ut varer og pris
         // Hint: Du kan bruke følgende streng med format-funksjonen:
-        for (Item item : this.shoppingCart) {
-            receipt += String.format("%dx %s\t%.2f\t%.2f\t%.2f\n", 1, item.getName(), this.getPriceForItem(item), this.getMVAForItem(item), this.getPriceForItem(item));
-        }
 
+        for (Item item : this.shoppingCart) {
+            receipt += String.format("%dx %s\t%.2f\t%.2f\t%.2f\n", 1, item.getName(), this.getPriceForItem(item), 0.0,
+                    this.getPriceForItem(item));
+        }
         // "%dx %s\t%.2f\t%.2f\t%.2f"
 
         /*
@@ -188,7 +167,7 @@ public class SelfServiceCheckout {
                                 Takk for at du handlet
                                     hos oss i OOP!
                         --------------------------------------
-                        """, this.getTotalMVAForCart(), this.getTotalPriceForCart());
+                        """, 0.0, this.getTotalPriceForCart());
         return receipt;
     }
 
@@ -203,9 +182,6 @@ public class SelfServiceCheckout {
 
         SelfServiceCheckout checkout = new SelfServiceCheckout("fri", "passord123");
 
-
-
-
         checkout.scanItem(tomato);
         checkout.scanItem(cheese);
         checkout.scanItem(tortillas);
@@ -214,11 +190,11 @@ public class SelfServiceCheckout {
 
         System.out.println(checkout);
 
-        // checkout.registerPhoneNumber("004742345678");
-        // checkout.activateAdminMode("passord123");
-        // checkout.removeFromCart(0);
+        checkout.registerPhoneNumber("004742345678");
+        checkout.activateAdminMode("passord123");
+        checkout.removeFromCart(0);
 
-        // System.out.println(checkout);
+        System.out.println(checkout);
     }
 
 }

@@ -1,0 +1,153 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>tdt4100-v2021</groupId>
+    <artifactId>todolist-example</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <dependencies>
+        <!-- JavaFX FXML -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>16</version>
+        </dependency>
+
+        <!-- JUnit 5 -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.7.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- TextFX -->
+        <dependency>
+			<groupId>org.testfx</groupId>
+			<artifactId>testfx-core</artifactId>
+			<version>4.0.16-alpha</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.testfx</groupId>
+			<artifactId>testfx-junit5</artifactId>
+			<version>4.0.16-alpha</version>
+			<scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- compile -->
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                <release>17</release>
+                </configuration>
+            </plugin>
+            <!-- run tests -->
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
+                <configuration>
+                </configuration>
+            </plugin>
+
+            <!-- launch and link javafx app -->
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.6</version>
+                <configuration>                    
+                    <options>
+                    </options>
+                    <mainClass>todolist/todolist.fxui.TodoApp</mainClass>
+                    <!-- for jlink -->
+                    <compress>2</compress>
+                    <noHeaderFiles>true</noHeaderFiles>
+                    <stripDebug>true</stripDebug>
+                    <noManPages>true</noManPages>
+                    <launcher>todolist</launcher>
+                    <jlinkImageName>todolist</jlinkImageName>
+                    <jlinkZipName>todolist</jlinkZipName>
+                </configuration>
+            </plugin>
+
+            <!-- package as jar with manifest -->
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>todolist.fxui.TodoLauncher</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <!-- replace jar with über jar that includes depedencies -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>todolist.fxui.TodoLauncher</mainClass>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- package as executable with jpackage -->
+            <plugin>
+                <groupId>org.panteleyev</groupId>
+                <artifactId>jpackage-maven-plugin</artifactId>
+                <version>1.4.0</version>
+                <configuration>
+                    <name>TodoList</name>
+                    <appVersion>1.0.0</appVersion>
+                    <vendor>no.hal</vendor>
+                    <destination>target/dist</destination>
+                    <module>todolist/todolist.fxui.TodoApp</module>
+                    <runtimeImage>target/todolist</runtimeImage>
+                    <javaOptions>
+                        <option>-Dfile.encoding=UTF-8</option>
+                    </javaOptions>
+                </configuration>
+            </plugin>
+            <!-- package as executable with graal and gluon's client-maven-plugin -->
+            <plugin>
+                <groupId>com.gluonhq</groupId>
+                <artifactId>client-maven-plugin</artifactId>
+                <version>0.1.39</version>
+                <configuration>
+                    <mainClass>todolist.fxui.TodoApp</mainClass>
+                    <reflectionList>
+                        <list>todolist.fxui.TodoController</list>
+                        <list>java.lang.String</list>
+                        <list>javafx.scene.control.Button</list>
+                        <list>javafx.scene.control.ChoiceBox</list>
+                        <list>javafx.scene.control.Label</list>
+                        <list>javafx.scene.control.ListView</list>
+                        <list>javafx.scene.control.TextField</list>
+                        <list>javafx.scene.layout.GridPane</list>
+                        <list>javafx.scene.layout.HBox</list>
+                        <list>javafx.scene.layout.Pane</list>
+                        <list>javafx.scene.layout.VBox</list>
+                        <list>javafx.scene.text.Text</list>
+                    </reflectionList>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

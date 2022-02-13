@@ -1,0 +1,14 @@
+Hva er en sannsynlighetsmodifikator?
+
+En sannsynlighetsmodifikator er en måte for flere språk
+og deklarere hva som skal være synlige og usynlige felt og deler av programmer. 
+Hvis man setter et felt som privat vil den bare være mulig å hente inn via den 
+klassen den er i, men hvis den er offentlig, vil den være mulig å hente av alle klasser.
+
+Hva er forskjellen på private og public og når brukes de?
+
+Forskjellen på de kom jeg inn på tidligere i hva en sannsynlighetsmodifikator var, men det er en grunnregel om at
+alle attributes burde være private, grunnet at de skal definere noe som bare skal brukes i en klasse (vanligvis)
+mens metoder burde være offentlige. 
+
+

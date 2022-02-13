@@ -23,7 +23,7 @@ public class Counter {
 
         if (counter == end)
             return true;
-        return false;}
+        return false;
         
         
     }
