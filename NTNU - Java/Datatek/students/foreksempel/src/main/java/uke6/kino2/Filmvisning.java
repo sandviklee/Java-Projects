@@ -1,5 +1,8 @@
 package uke6.kino2;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 public class Filmvisning {
 
 	String sal;
@@ -8,8 +11,8 @@ public class Filmvisning {
 	Film film;
 
 	/**
-	 * Denne tar inn en Film. Det betyr at en mï¿½ lage Film-objekter pï¿½ utsiden av Filmvisning, og sï¿½ sende
-	 * dem inn nï¿½r en lager en visning.
+	 * Denne tar inn en Film. Det betyr at en må lage Film-objekter på utsiden av Filmvisning, og så sende
+	 * dem inn når en lager en visning.
 	 * @param sal
 	 * @param tid
 	 * @param pris
@@ -25,9 +28,9 @@ public class Filmvisning {
 
 
 	/**
-	 * Er denne mï¿½ten ï¿½ gjï¿½re det pï¿½ noe smart? Det kan vï¿½re tidspunkt der det ikke er sï¿½ farlig hvordan en lager
-	 * objekter. Andre ganger kan det vï¿½re viktig. Kanskje kinoen ï¿½nsker ï¿½ ha en liste over alle filmene som gï¿½r
-	 * til enhver tid? Da mï¿½ kinoen lage Film-objekter, og da er det like smart ï¿½ bare tillate innlegging av nye
+	 * Er denne måten å gjøre det på noe smart? Det kan være tidspunkt der det ikke er så farlig hvordan en lager
+	 * objekter. Andre ganger kan det være viktig. Kanskje kinoen ønsker å ha en liste over alle filmene som går
+	 * til enhver tid? Da må kinoen lage Film-objekter, og da er det like smart å bare tillate innlegging av nye
 	 * Filmvisninger gjennom referanse til en Film.
 	 * @param sal
 	 * @param tid
@@ -37,7 +40,7 @@ public class Filmvisning {
 	 * @param nasjonalitet
 	 */
 	public Filmvisning(String sal, String tid, int pris, String tittel, int aldersgrense, String nasjonalitet) {
-		// Pï¿½ forelesningen viste jeg det som er kommentert ut. En kan like gjerne kalle den andre konstruktï¿½ren:
+		// På forelesningen viste jeg det som er kommentert ut. En kan like gjerne kalle den andre konstruktøren:
 //		super();
 //		Film film = new Film(tittel, aldersgrense, nasjonalitet);
 //		this.sal = sal;
@@ -55,7 +58,7 @@ public class Filmvisning {
 		Filmvisning fv1 = new Filmvisning("Nova 3", "20:00", 85, alexander);
 		Filmvisning fv2 = new Filmvisning("Prinsen 4", "17:00", 75, alexander);
 		Filmvisning fv3 = new Filmvisning("Prinsen 4", "20:30", 85, alexander);
-		// Den neste gï¿½r pï¿½ grunn av at jeg har laget enda en konstruktï¿½r, men det er usikkert om det er lurt.
+		// Den neste går på grunn av at jeg har laget enda en konstruktør, men det er usikkert om det er lurt.
 		Filmvisning fv4 = new Filmvisning("Prinsen 7", "20:30", 12, "Fantorangen har bursdag", 3, "Norsk");
 		System.out.println(fv1);
 		System.out.println(fv2);
