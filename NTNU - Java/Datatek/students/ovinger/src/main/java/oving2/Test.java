@@ -2,6 +2,7 @@ package oving2;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import javafx.css.converter.StringConverter;
 
@@ -43,32 +44,40 @@ import javafx.css.converter.StringConverter;
 //     }
 // }
 
+// public class Test {
+//     private String navn;
+//     private Test ektefelle;
+
+//     public void setNavn(String navn) {
+//         this.navn = navn;
+//     }
+
+//     public String getNavn() {
+//         return this.navn;
+//     }
+
+//     public void setEktefelle(Test ektefelle) {
+//         this.ektefelle = ektefelle;
+//     }
+
+//     public Test getEktefelle() {
+//         return this.ektefelle;
+//     }
+
+//     public static void main(String[] args) {
+//         Test Person1 = new Test();
+//         Test Person2 = new Test();
+
+//         Person1.setNavn()
+//     }
+
+
+// }
+
 public class Test {
-    private String navn;
-    private Test ektefelle;
-
-    public void setNavn(String navn) {
-        this.navn = navn;
-    }
-
-    public String getNavn() {
-        return this.navn;
-    }
-
-    public void setEktefelle(Test ektefelle) {
-        this.ektefelle = ektefelle;
-    }
-
-    public Test getEktefelle() {
-        return this.ektefelle;
-    }
+    private static String tekst = "HEISANN";
 
     public static void main(String[] args) {
-        Test Person1 = new Test();
-        Test Person2 = new Test();
-
-        Person1.setNavn()
+        System.out.println(Pattern.matches("[A-Z]{7}", tekst));
     }
-
-
 }
