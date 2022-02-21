@@ -60,19 +60,19 @@ public class TwitterAccount {
 
     public static void main(String[] args) {
         TwitterAccount simonsle = new TwitterAccount("simonsle");
-        TwitterAccount fridaskog = new TwitterAccount("fridaskog");
+        TwitterAccount olav = new TwitterAccount("Olav");
         TwitterAccount sverre = new TwitterAccount("Sverre");
         simonsle.tweet("Kvitre!");
         System.out.println(simonsle.getTweetCount());
-        fridaskog.retweet(simonsle.getTweet(1));
-        System.out.println(fridaskog.getTweetCount());
+        olav.retweet(simonsle.getTweet(1));
+        System.out.println(olav.getTweetCount());
         System.out.println(simonsle.getTweet(1));
-        sverre.retweet(fridaskog.getTweet(1));
+        sverre.retweet(olav.getTweet(1));
         System.out.println(simonsle.getRetweetCount());
         System.out.println(sverre.getTweetCount());
         System.out.println(sverre.getRetweetCount());
-        System.out.println(fridaskog.getRetweetCount());
-        System.out.println(fridaskog.getTweetCount());
+        System.out.println(olav.getRetweetCount());
+        System.out.println(olav.getTweetCount());
         
    
         
