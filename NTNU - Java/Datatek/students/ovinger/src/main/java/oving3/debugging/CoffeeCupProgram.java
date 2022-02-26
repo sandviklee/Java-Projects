@@ -13,7 +13,7 @@ public class CoffeeCupProgram {
 	}
 
 	public void run() {
-		// part1();
+		part1();
 		part2();
 	}
 

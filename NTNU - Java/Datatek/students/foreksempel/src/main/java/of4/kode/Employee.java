@@ -10,6 +10,9 @@ public class Employee {
     }
     
     public void promote() {
+        if (employer == null || this.employer == this.employer.getParentDepartment()) {
+            throw new IllegalArgumentException("No way to promote.");
+        }
         this.employer.removeEmployee(this);
         this.employer = this.employer.getParentDepartment();
         this.employer.addEmployee(this);
