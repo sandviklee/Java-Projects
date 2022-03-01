@@ -1,10 +1,9 @@
-package selfcheckoutmal;
+package selfcheckoutmal2;
 
 import java.util.List;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 
 public class SelfCheckout {
 
@@ -231,45 +230,21 @@ public class SelfCheckout {
     public String getCheckoutText() {
         String text = "";
         if (isMember()) {
-            text = "Medlems-ID: " + phoneNumber + "\n";
+            text = String.format(
+                    """
+                            ---------------------------------------
+                            Medlems-ID: %s
+                            """, this.phoneNumber);
         }
         text += String.format(
                 """
                         ---------------------------------------
                         Total MVA\t\t\t\t\t\t%.2f
                         Total\t\t\t\t\t\t\t%.2f
-                        ---------------------------------------
-                                """,
+                        ---------------------------------------""",
                 this.getTotalMVAForCart(),
                 this.getTotalPriceForCart());
         return text;
-    }
-
-    // main-metode for å teste koden
-    public static void main(String[] args) {
-
-        SelfCheckout checkout = new SelfCheckout("fri", "passord123");
-
-        Item tomato = new Item("Tomat", 5, "fruit");
-        Item cheese = new Item("Norvegia", 90, "diary");
-        Item cheese2 = new Item("Norvegia", 90, "diary");
-        Item tortillas = new Item("Lefser", 15, "taco");
-        Item groundMeat = new Item("Kjøttdeig", 29.99, "taco");
-
-        checkout.scanItem(tomato);
-        checkout.scanItem(cheese);
-        checkout.scanItem(tortillas);
-        checkout.scanItem(groundMeat);
-        checkout.scanItem(cheese2);
-
-        System.out.println(checkout);
-
-        checkout.registerPhoneNumber("004742345678");
-        checkout.activateAdminMode("passord123");
-        checkout.removeFromCart(0);
-
-        System.out.println(checkout);
-
     }
 
 }

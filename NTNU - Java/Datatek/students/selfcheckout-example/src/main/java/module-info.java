@@ -2,7 +2,7 @@
  * @author hal
  *
  */
-open module foreksempel {
+open module selfcheckout {
 	requires javafx.base;
 	requires javafx.controls;
 	requires javafx.fxml;

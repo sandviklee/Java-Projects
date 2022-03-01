@@ -1,0 +1,13 @@
+// Dette er et sett med test-varer vi kan bruke i applikasjonen vår
+// Gjerne prøv å lage noen flere selv! :)
+
+new Item("Tomat", 5, "fruit"),
+new Item("Hvitost, Norvegia", 90, "diary"),
+new Item("Hvitost, Synnøve", 90, "diary"),
+new Item("Tortillalefser", 15, "taco"),
+new Item("Kjøttdeig, 400g", 29.99, "taco"),
+new Item("Egg, 6 stk", 41.59, "breakfast"),
+new Item("Leverpostei", 29.99, "breakfast"),
+new Item("Brød", 18.90, "breakfast"),
+new Item("Yoghurt", 15.50, "diary"),
+new Item("Pose", 1.50, "general")));

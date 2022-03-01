@@ -42,7 +42,7 @@ Diagrammet kan for eksempel skrives på papir eller tegnes/lages i et valgfritt 
 
 ### Del 3: Testing
 
-Skriv kode som tester oppførselen til `CoffeeCup`-klassen, dvs. at du skal teste om metodene i listen under har rett oppførsel og returnerer det de skal, i tillegg til at du skal teste konstruktørene. Det er ikke nødvendig å teste absolutt alle mulige tilfeller, men det kreves at du tester den grunnleggende funksjonaliteten.
+Skriv kode som tester oppførselen til `CoffeeCup`-klassen, dvs. at du skal teste om metodene i listen under har rett oppførsel og returnerer det de skal, i tillegg til at du skal teste konstruktørene. Det er ikke nødvendig å teste absolutt alle mulige tilfeller, men det kreves at du tester den grunnleggende funksjonaliteten. Basert på resultatene dine, drøft om klassen er implementert på en fornuftig måte.
 
 - `getCapacity`
 - `getCurrentVolume`
