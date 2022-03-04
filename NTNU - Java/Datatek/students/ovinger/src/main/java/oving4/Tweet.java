@@ -4,7 +4,7 @@ public class Tweet {
     private TwitterAccount account;
     private String twitterTekst;
     private Tweet origTweet;
-    private int retweetCount;
+    public int retweetCount;
     // private ArrayList<ArrayList<Tweet> > tweetList = new ArrayList<ArrayList<Tweet>>();
 
     public Tweet(TwitterAccount account, String twitterTekst) {
@@ -34,16 +34,23 @@ public class Tweet {
     }
 
     public Tweet getOriginalTweet() {
-        if (origTweet != null) {
+        if (origTweet.retweetCount >= 1) {
             return origTweet;
-        } else {
-            return null;
         }
+        return null;
+
     }
 
     public int getRetweetCount() {
         return retweetCount;
     }
+
+    
+    @Override
+    public String toString() {
+        return "Origtweet: " + account + ":  " + twitterTekst + "";
+    }
+
     public static void main(String[] args) {
         // Tweet t1 = new Tweet("simonsle", "Dayum daniel");
         // Tweet t2 = new Tweet("simonsle", t1);

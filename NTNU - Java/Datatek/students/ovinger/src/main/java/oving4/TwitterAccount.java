@@ -41,6 +41,7 @@ public class TwitterAccount {
     }
 
     public void retweet(Tweet tweet) {
+        tweet.retweetCount += 1;
         (tweet.getOwner()).retweetList.add(new Tweet(this, tweet));
         tweetList.add(new Tweet(this, tweet).getOriginalTweet());
 
@@ -56,6 +57,13 @@ public class TwitterAccount {
 
     public int getRetweetCount() {
         return retweetList.size();
+    }
+
+    
+
+    @Override
+    public String toString() {
+        return ""+ username + "";
     }
 
     public static void main(String[] args) {
