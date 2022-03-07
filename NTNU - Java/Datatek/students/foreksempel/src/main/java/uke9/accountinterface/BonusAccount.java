@@ -5,6 +5,14 @@ public class BonusAccount implements Account {
     int balance;
     int maxCredit = -1000;
 
+    public int getMaxCredit() {
+        return maxCredit;
+    }
+
+    public void setMaxCredit(int maxCredit) {
+        this.maxCredit = maxCredit;
+    }
+
     @Override
     public int getBalance() {
         return balance;

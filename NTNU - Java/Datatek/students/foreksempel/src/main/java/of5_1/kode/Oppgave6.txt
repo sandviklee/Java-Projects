@@ -1,0 +1,11 @@
+public static void main(String[] args) {
+	Dog dog = new Dog("Ludo", 2);
+	Chicken chicken = new Chicken("Albert", 1);
+	
+	List<Animal> animals = new ArrayList<>(Arrays.asList(dog, chicken));
+	Collections.sort(animals);
+	
+	for (Animal animal : animals) {
+		System.out.println(animal.makeSound());
+	}
+}

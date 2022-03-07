@@ -1,0 +1,12 @@
+public static void main(String[] args) {
+	Farm farm = new Farm();
+	Dog dog = new Dog("Ludo", 2);
+	Chicken chicken = new Chicken("Albert", 1);
+	
+	farm.addAnimal(dog);
+	farm.addAnimal(chicken);
+	
+	for (Animal animal : farm.getAnimals()) {
+		System.out.println(animal.makeSound());
+	}
+}
