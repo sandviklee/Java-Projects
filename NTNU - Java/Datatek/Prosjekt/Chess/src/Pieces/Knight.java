@@ -1,5 +1,5 @@
 package Pieces;
 
-public class Knight {
+public class Knight extends BasePiece {
     
 }
