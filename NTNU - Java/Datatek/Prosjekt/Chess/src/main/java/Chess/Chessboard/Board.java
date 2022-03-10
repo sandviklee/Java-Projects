@@ -1,7 +1,7 @@
-package Chessboard;
+package Chess.Chessboard;
 
-import Pieces.BasePiece;
-import Pieces.Pawn;
+import Chess.Pieces.BasePiece;
+import Chess.Pieces.Pawn;
 
 public class Board {
     public static void main(String[] args) {
