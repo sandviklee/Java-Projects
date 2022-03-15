@@ -6,6 +6,10 @@ public class RPNCalc {
     private ArrayList<Double> integers = new ArrayList<>();
     double sum;
 
+    public RPNCalc() {
+        
+    }
+
     public void push(double n) {
         integers.add(n);
     }

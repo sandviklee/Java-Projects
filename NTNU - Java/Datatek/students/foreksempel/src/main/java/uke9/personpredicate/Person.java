@@ -30,6 +30,10 @@ class Person {
 	{ 
 		return this.fornavn + " " + this.etternavn + "\t"+ this.age; 
 	}
+
+	public Collection<Person> all(Predicate<Person> p) {
+		
+	}
 	
 	
 	public static void main (String[] args) 

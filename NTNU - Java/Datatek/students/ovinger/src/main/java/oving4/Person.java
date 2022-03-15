@@ -51,7 +51,6 @@ public class Person {
         if (this.getGender() == 'F') {
             if ((this != p.mum) && (p.mum != null)) {
                 p.mum.children.remove(p);
-                p.mum = this;
             } 
             p.mum = this;
             this.children.add(p);
@@ -59,7 +58,6 @@ public class Person {
         } else {
             if ((this != p.dad) && (p.dad != null)) {
                 p.dad.children.remove(p);
-                p.dad = this;
             } 
             p.dad = this;
             this.children.add(p);
@@ -87,7 +85,6 @@ public class Person {
             }
             if ((p != this.mum) && (this.mum != null)) {
                 this.mum.children.remove(this);
-                this.mum = p; 
             }
             this.mum = p;
             this.mum.children.add(this);
@@ -105,7 +102,6 @@ public class Person {
             }
             if ((p != this.dad) && (this.dad != null)) {
                 this.dad.children.remove(this);
-                this.dad = p;
             }
             this.dad = p;
             this.dad.children.add(this);
