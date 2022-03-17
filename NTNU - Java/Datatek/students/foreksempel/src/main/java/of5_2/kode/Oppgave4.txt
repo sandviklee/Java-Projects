@@ -1,0 +1,12 @@
+    public static void main(String[] args) {
+        Farm farm = new Farm();
+        farm.addAnimal(new Dog("Ludo", 12));
+        farm.addAnimal(new Dog("Fido", 0));
+        farm.addAnimal(new Chicken("Peter", 1));
+        farm.addAnimal(new Chicken("Albert", 4));
+
+        Iterator<Animal> iterator = new FilterAnimalsIterator(farm, new YoungAnimalPredicate());
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next().makeSound());
+        }
+    }
