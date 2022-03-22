@@ -15,7 +15,7 @@ public class SelfCheckoutApp extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        primaryStage.setTitle("Self-Checkout");
+        primaryStage.setTitle("OOP mini Self-Checkout");
         primaryStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("SelfCheckout.fxml"))));
         primaryStage.show();
     }

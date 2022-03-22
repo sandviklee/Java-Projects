@@ -40,9 +40,10 @@
                         <Image url="@oopmini_small.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="backButton" onAction="#handleAdminDeactivation" layoutX="215.0" layoutY="45.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="70.0" text="&lt; Tilbake" visible="false" />
-                  <Button fx:id="checkout" onAction="#handleCheckout" layoutX="131.0" layoutY="15.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="70.0" text="Ferdig" />
-                  <Button fx:id="adminMode" onAction="#handleAdminActivation" layoutX="215.0" layoutY="15.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="70.0" text="Admin" />
+                  <Button fx:id="backButton" layoutX="215.0" layoutY="45.0" mnemonicParsing="false" onAction="#handleAdminDeactivation" prefHeight="27.0" prefWidth="70.0" text="&lt; Tilbake" visible="false" />
+                  <Button fx:id="checkout" layoutX="131.0" layoutY="15.0" mnemonicParsing="false" onAction="#handleCheckout" prefHeight="60.0" prefWidth="70.0" text="Ferdig" />
+                  <Button fx:id="adminMode" layoutX="215.0" layoutY="15.0" mnemonicParsing="false" onAction="#handleAdminActivation" prefHeight="60.0" prefWidth="70.0" text="Admin" />
+                  <Button fx:id="scanReceipt" layoutX="131.0" layoutY="15.0" mnemonicParsing="false" onAction="#handleScanReceipt" prefHeight="60.0" prefWidth="70.0" style="-fx-text-alignment: center;" text="Scan kvittering" visible="false" wrapText="true" />
                </children>
             </Pane>
             <Pane prefHeight="200.0" prefWidth="200.0">
