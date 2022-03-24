@@ -4,7 +4,7 @@ Oppgaven handler om feilsøking ("debugging") av en Iterator-implementasjon ved 
 
 Les først denne artikkelen om bruk av debugger i VSCode om du ikke er kjent med dette: [Kjøring av kode og debugging i VS Code](https://www.ntnu.no/wiki/pages/viewpage.action?pageId=235996724)
 
-Klassen **StringMergingIterator** implementerer grensesnittet [**Iterator<String>**](https://www.ntnu.no/wiki/display/tdt4100/Iterasjon+med+Iterator+og+Iterable), og leverer annenhver verdi fra to andre iteratorer av typen **Iterator<String>**. Denne iteratoren fletter altså verdiene fra to andre gitte iteratorer, og er altså en meta-iterator. Meta-iteratorer er iteratorer som bruker andre iteratorer som datakilder. Se lysark om teknikken: [Forelesningslysark om meta-iteratorer](https://docs.google.com/file/d/0B9IltfWcNirndERTb1RnTGM3YWs/preview)
+Klassen **StringMergingIterator** implementerer grensesnittet [**Iterator<String>**](https://www.ntnu.no/wiki/display/tdt4100/Iterasjon+med+Iterator+og+Iterable), og leverer annenhver verdi fra to andre iteratorer av typen **Iterator<String>**. Denne iteratoren fletter altså verdiene fra to andre gitte iteratorer, og er altså en meta-iterator. Meta-iteratorer er iteratorer som bruker andre iteratorer som datakilder. Se lysark om teknikken inne på blackboard-siden til emnet -> Undervisningsmateriell -> Forelesninger: Slides og opptak -> Uke 12 -> Slides om meta-iteratorer.
 
 **StringMergingIterator** har følgende konstruktør:
 
