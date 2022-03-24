@@ -2,21 +2,27 @@ package oving5;
 
 public class Person2 implements Named{
     private String fullName;
+    public Person1 p;
 
     public Person2(String fullName) {
         this.fullName = fullName;
+        String str[] = fullName.split(" ");
+        p = new Person1(str[0],str[1]);
     }
 
     @Override
     public void setGivenName(String givenName) {
         String str[] = fullName.split(" ");
         this.fullName = givenName + " " + str[1];
+
+        this.fullName = p.getFullName();
     }
 
     @Override
     public String getGivenName() {
         String str[] = fullName.split(" ");
-        return str[0];
+
+        return p.getGivenName();
     }
 
     @Override
