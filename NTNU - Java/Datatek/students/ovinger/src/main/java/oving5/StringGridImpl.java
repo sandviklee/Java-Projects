@@ -42,6 +42,7 @@ public class StringGridImpl implements StringGrid{
     @Override
     public void setElement(int row, int column, String element) {
         if (row <= rows && column <= columnCount) {
+            stringGrid.get(column).remove("");
             stringGrid.get(column).add(row, element);
         } else {
             System.out.println("Not available in range to set.");
@@ -52,8 +53,18 @@ public class StringGridImpl implements StringGrid{
         return stringGrid;
     }
     public static void main(String[] args) {
-        StringGridImpl p1 = new StringGridImpl(2, 3);
-        System.out.println(p1.getstringGrid());
+        StringGridImpl stringGrid = new StringGridImpl(2, 3);
+        stringGrid.setElement(0, 0, "0, 0");
+		stringGrid.setElement(0, 1, "0, 1");
+		stringGrid.setElement(0, 2, "0, 2");
+		stringGrid.setElement(1, 0, "1, 0");
+		stringGrid.setElement(1, 1, "1, 1");
+		stringGrid.setElement(1, 2, "1, 2");
+        System.out.println(stringGrid.getstringGrid());
+
+        System.out.println(stringGrid.getColumnCount());
+        System.out.println(stringGrid.getElement(1, 2));
+        
     }
 }
 
