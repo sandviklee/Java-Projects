@@ -1,0 +1,6 @@
+{
+    "java.project.sourcePaths": [
+        "Chess/src/main/java/Chess/Chessboard",
+        "src/main/java/Chess/Chessboard"
+    ]
+}

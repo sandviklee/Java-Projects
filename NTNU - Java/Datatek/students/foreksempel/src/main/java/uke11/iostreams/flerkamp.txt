@@ -1,0 +1,6 @@
+Name,    Poker,  Highjump,  Balloonshooting, SausageEating,  HoldBreath
+John,    8,         1.67,      17,              23,             2:01.65
+Lise,    12,        1.30,      12,              13,             1:13.02
+Per,     8,         1.55,      8,               0,              1:51.35
+Nelly,   2,         1.34,      9,               17,             0:31.18
+Nora,    5,         1.87,      13,              5,              2:01.65

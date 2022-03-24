@@ -1,0 +1,15 @@
+public static void main(String[] args) {
+    List<Animal> animals = new ArrayList<>(List.of(
+            new Dog("Ludo", 2),
+            new Chicken("Albert", 1),
+            new Dog("Ollie", 6),
+            new Chicken("Ringo", 6),
+            new Dog("Buddy", 8),
+            new Chicken("Kjell", 5)));
+
+    Collections.sort(animals);
+
+    for (Animal animal : animals) {
+        System.out.println(animal.makeSound());
+    }
+}
