@@ -30,23 +30,34 @@ public class StringMergingIterator implements Iterator<String> {
 		String result = null;
 
 		 
-		if (turnSwitch) {
-			if (first.hasNext()) {
+		// if (turnSwitch) {
+		// 	if (first.hasNext()) {
+		// 		result = first.next();
+		// 		turnSwitch = false;
+		// 		return result;
+		// 	} else {
+		// 		result = second.next();
+		// 		turnSwitch = false;
+		// 	}
+		// }
+		// else if (!turnSwitch) {
+		// 	result = second.next();
+		// 	turnSwitch = true;
+		// }
+
+		if (!first.hasNext()) {
+			result = second.next();
+		} else if (!second.hasNext()) {
+			result = first.next();
+		} else {
+			if (turnSwitch) {
 				result = first.next();
 				turnSwitch = false;
-				return result;
 			} else {
 				result = second.next();
-				turnSwitch = false;
+				turnSwitch = true;
 			}
 		}
-		else if (!turnSwitch) {
-			result = second.next();
-			turnSwitch = true;
-		}
-
-		
-
 		return result;
 	}
 
