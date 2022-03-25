@@ -1,6 +1,6 @@
 package oving5;
 
-public interface StringGrid {
+public interface StringGrid extends Iterable<StringGrid> {
     public int getRowCount();
 
     public int getColumnCount();
