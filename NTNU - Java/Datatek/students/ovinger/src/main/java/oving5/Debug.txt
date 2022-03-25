@@ -1,0 +1,4 @@
+Ved å bruke debuggeren, så jeg at next() funksjonen ikke ga mening. Den sa at hvis den første iteratoren ikke hadde den neste, så skulle resultatet bli den neste av den første iteratoren.
+Dette ser vi er en selvmotsigelse, og gjør at programmet ikke kjører. Siden den prøver å hente noe som ikke eksisterer. 
+
+Dette ser vi også med den andre iteratoren second.
