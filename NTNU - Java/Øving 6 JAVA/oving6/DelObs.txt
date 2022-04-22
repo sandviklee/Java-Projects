@@ -1,0 +1,7 @@
+Delegering - Dette går ut på å få andre interne objekter 
+til å utføre logiske oppgaver. Slik at et hovedobjekt bare tar seg
+av å sende ut oppgaver. 
+
+Observatør/Observerte - Dette går ut på at det er klasser (derfor objekter) som skal
+være den observerte og observatøren. Dette for å være klar over endringer gjort
+slik at man alltid kan være oppdatert på det. 
